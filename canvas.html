@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="description" content="Canvas Drawing">
+	<meta charset="uft-8">
+	<title>My First Canvas Drawing</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="500" height="500"></canvas>
+</body>
+<script> "use strict"
+	var canvas = document.getElementById('myCanvas');
+	var context = canvas.getContext('2d');
+	context.beginPath();
+	context.moveTo(50,50);
+	context.lineTo(300, 60);
+	context.lineTo(100,100);
+	context.fill();
+</script>
+</html>
