@@ -10,8 +10,7 @@
 </body>
 <script> "use strict"
 	function setup() {
-	var y = 20;
-	var x = 20;
+	var y, y2, y3, y4, y5 = 300;
 		var canvas = document.getElementById('myCanvas');
 		function draw() {
 			var context = canvas.getContext('2d');
@@ -23,12 +22,44 @@
 			context.clearRect(20, 20, 630, 630);
 			context.strokeRect(25, 25, 620, 620);
 			context.beginPath();
-			context.rect(85, y, 50, 50);
+			context.arc(100, y, 20, 0, Math.PI*2, true);
+			context.fillStyle="#e6ac00";
 			context.fill();
-			y = (y + 2) % 600;
-			context.strokeRect(x, 550, 20, 30);
-			x = (x + 7) % 600;
+			context.closePath();
+			context.beginPath();
+			context.arc(170, y2, 20, 0, Math.PI*2, true);
+			context.fillStyle="#e6ac00";
+			context.fill();
+			context.closePath();
+			context.beginPath();
+			context.arc(410, y3, 20, 0, Math.PI*2, true);
+			context.fillStyle="#e6ac00";
+			context.fill();
+			context.closePath();
+			context.beginPath();
+			context.arc(470, y4, 20, 0, Math.PI*2, true);
+			context.fillStyle="#e6ac00";
+			context.fill();
+			context.closePath();
+			context.beginPath();
+			context.arc(550, y5, 20, 0, Math.PI*2, true);
+			context.fillStyle="#e6ac00";
+			context.fill();
+			if(y >= 300 && y < 630) { y = (y + 2); }
+			else { y = 300; }
+			if(y2 >= 300 && y2 < 630) { y2 = (y2 + 4); }
+			else { y2 = 300; }
+			if(y3 >= 300 && y3 < 630) { y3 = (y3 + 2.5); }
+			else { y3 = 300; }
+			if(y4 >= 300 && y4 < 630) { y4 = (y2 + 4.5); }
+			else { y4 = 300; }
+			if(y5 >= 300 && y5 < 630) { y5 = (y5 + 3); }
+			else { y5 = 300; }
 			context.font = "70px Minion Web";
+			var grd = context.createLinearGradient(10,10,350,0);
+			grd.addColorStop(0,"#ffccee");
+			grd.addColorStop(1,"#ff33bb");
+			context.fillStyle=grd;
 			context.fillText("Hello World", 160, 600);
 			context.beginPath();
 			context.arc(330, 300, 250, 0, Math.PI, true);
