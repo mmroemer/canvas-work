@@ -6,15 +6,90 @@
 	<title>My First Canvas Drawing</title>
 </head>
 <body>
-	<canvas id="myCanvas" width="500" height="500"></canvas>
+	<canvas id="myCanvas" width="700" height="700"></canvas>
 </body>
 <script> "use strict"
-	var canvas = document.getElementById('myCanvas');
-	var context = canvas.getContext('2d');
-	context.beginPath();
-	context.moveTo(50,50);
-	context.lineTo(300, 60);
-	context.lineTo(100,100);
-	context.fill();
+	function setup() {
+	var y = 20;
+	var x = 20;
+		var canvas = document.getElementById('myCanvas');
+		function draw() {
+			var context = canvas.getContext('2d');
+			canvas.width = canvas.width;
+			context.fillRect(400, 400, 100, 100);
+			context.clearRect(425, 425, 50, 50);
+			context.strokeRect(430, 430, 40, 40);
+			context.fillRect(10, 10, 650, 650);
+			context.clearRect(20, 20, 630, 630);
+			context.strokeRect(25, 25, 620, 620);
+			context.beginPath();
+			context.rect(85, y, 50, 50);
+			context.fill();
+			y = (y + 2) % 600;
+			context.strokeRect(x, 550, 20, 30);
+			x = (x + 7) % 600;
+			context.font = "70px Minion Web";
+			context.fillText("Hello World", 160, 600);
+			context.beginPath();
+			context.arc(330, 300, 250, 0, Math.PI, true);
+			context.closePath();
+			context.fillStyle="#ff0000";
+			context.fill();
+			context.beginPath();
+			context.arc(330, 300, 220, 0, Math.PI, true);
+			context.fillStyle="#ff8c1a";
+			context.fill();
+			context.closePath();
+			context.beginPath();
+			context.arc(330, 300, 190, 0, Math.PI, true);
+			context.fillStyle="#ffff00";
+			context.fill();
+			context.closePath();
+			context.beginPath();
+			context.arc(330, 300, 160, 0, Math.PI, true);
+			context.fillStyle="#2eb82e";
+			context.fill();
+			context.closePath();
+			context.beginPath();
+			context.arc(330, 300, 130, 0, Math.PI, true);
+			context.fillStyle="#0080ff";
+			context.fill();
+			context.closePath();
+			context.beginPath();
+			context.arc(330, 300, 100, 0, Math.PI, true);
+			context.fillStyle="#6600ff";
+			context.fill();
+			context.closePath();
+			context.beginPath();
+			context.arc(330, 300, 70, 0, Math.PI, true);
+			context.fillStyle="#a64dff";
+			context.fill();
+			context.closePath();
+			context.beginPath();
+			context.arc(330, 300, 40, 0, Math.PI, true);
+			context.fillStyle="#ffffff";
+			context.fill();
+			context.closePath();
+			context.beginPath();
+			context.arc(100, 330, 50, 0, Math.PI*2, true);
+			context.arc(150, 340, 50, 0, Math.PI*2, true);
+			context.arc(200, 340, 50, 0, Math.PI*2, true);
+			context.arc(250, 330, 50, 0, Math.PI*2, true);
+			context.fillStyle="#d9d9d9";
+			context.fill();
+			context.closePath();
+			context.beginPath();
+			context.arc(400, 330, 50, 0, Math.PI*2, true);
+			context.arc(450, 340, 50, 0, Math.PI*2, true);
+			context.arc(500, 340, 50, 0, Math.PI*2, true);
+			context.arc(550, 330, 50, 0, Math.PI*2, true);
+			context.fillStyle="#d9d9d9";
+			context.fill();
+			context.closePath();
+			window.requestAnimationFrame(draw);
+		};
+		window.requestAnimationFrame(draw);
+	};
+	window.onload = setup;
 </script>
 </html>
